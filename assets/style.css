@@ -29,20 +29,20 @@ body {
 }
 
 .canvas.in {
-    animation: hello .5s forwards;
+    animation: hello .5s forwards linear;
 }
 
 .canvas.out {
-    animation: bye .5s forwards;
+    animation: bye .5s forwards linear;
 }
 
 .canvas2.in {
     visibility: visible;
-    animation: hello .5s forwards;
+    animation: hello .5s forwards linear;
 }
 
 .canvas2.out {
-    animation: bye .5s forwards;
+    animation: bye .5s forwards linear;
 }
 
 @keyframes bye {
