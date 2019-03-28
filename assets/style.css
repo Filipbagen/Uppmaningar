@@ -1,9 +1,58 @@
 body {
+    color: white;
+}
+
+.canvas {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
     padding: 0;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+}
+
+.canvas2 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.canvas.in {
+    animation: hello .5s forwards;
+}
+
+.canvas.out {
+    animation: bye .5s forwards;
+}
+
+.canvas2.in {
+    visibility: visible;
+    animation: hello .5s forwards;
+}
+
+.canvas2.out {
+    animation: bye .5s forwards;
+}
+
+@keyframes bye {
+    0%      {opacity: 1;}
+    100%    {opacity: 0;}
+}
+
+@keyframes hello {
+    0%      {opacity: 0;}
+    100%    {opacity: 1;}
 }
 
 h1 {

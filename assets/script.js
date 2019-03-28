@@ -10,16 +10,18 @@ const words = [
 let number = 0
 const txt = document.querySelector('#txt')
 const txt2 = document.querySelector('#txt2')
-const body = document.querySelector('body')
+const body = document.querySelector('.canvas')
+const body2 = document.querySelector('.canvas2')
 
 const init = () => {
   firstTxt()
+   console.log(number)
 }
 
 const firstTxt = () => {
   const firstNum = randomNum()
 
-  body.style.backgroundImage = 'linear-gradient(' + words[firstNum].color + ')'
+  body2.style.backgroundImage = 'linear-gradient(' + words[firstNum].color + ')'
   txt2.textContent = words[firstNum].summon
   txt2.style.visibility = 'visible'
 }
@@ -39,32 +41,53 @@ const randomNum = () => {
 const changeTextAndBg = () => {
 
   const myNum = randomNum()
-  console.log(myNum)
-  console.log(myNum)
+  const myNum2 = randomNum()
+
+  // console.log(myNum)
+  // console.log(myNum2)
 
 
   //Gradient
   const myGradient = words[myNum].color
-  const bg = document.querySelector('body')
-  bg.style.backgroundImage = 'linear-gradient(' + myGradient + ')'
-  console.log(myGradient)
+  const myGradient2 = words[myNum2].color
+  // body.style.backgroundImage = 'linear-gradient(' + myGradient + ')'
+
+
+
 
   //Text
   if (evenOrOdd() % 2 === 0) { //Number is even
-    txt.classList.remove('in')
+    txt.classList.remove('in') //Bort med txt, in med txt2
     txt.classList.add('out')
 
-    txt2.textContent = words[myNum].summon
+    txt2.textContent = words[myNum2].summon
     txt2.classList.remove('out')
     txt2.classList.add('in')
 
+    //Gradient
+    body.classList.remove('in')
+    body.classList.add('out')
+
+    body2.style.backgroundImage = 'linear-gradient(' + myGradient2 + ')'
+    body2.classList.remove('out')
+    body2.classList.add('in')
+
+
   } else {                     //Number is odd
-    txt2.classList.remove('in')
+    txt2.classList.remove('in') //Bort med txt2, in med txt
     txt2.style.visibility = 'visible'
     txt2.classList.add('out')
 
     txt.textContent = words[myNum].summon
     txt.classList.remove('out')
     txt.classList.add('in')
+
+    //Gradient
+    body2.classList.remove('in')
+    body2.classList.add('out')
+
+    body.style.backgroundImage = 'linear-gradient(' + myGradient + ')'
+    body.classList.remove('out')
+    body.classList.add('in')
   }
 }
